@@ -3,12 +3,12 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://120.79.179.112:3306/zhangjp?characterEncoding=UTF-8
+    url: jdbc:mysql://127.0.0.1:3306/zhangjp?characterEncoding=UTF-8
     username: zhangjp
     password: zhangjp
 
   redis:
-    host: 120.79.179.112
+    host: 127.0.0.1
     database: 1
     password: test
     port: 6379

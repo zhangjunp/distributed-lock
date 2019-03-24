@@ -5,7 +5,6 @@ import lombok.Setter;
 import org.I0Itec.zkclient.ZkClient;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Scope;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -63,6 +62,6 @@ public class RedisConfig {
 
     @Bean
     public ZkClient zkClient(){
-        return new ZkClient("192.168.63.131:2181");
+        return new ZkClient("127.0.0.1:2181");
     }
 }

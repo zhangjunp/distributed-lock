@@ -1,0 +1,23 @@
+server:
+  port: 9999
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://120.79.179.112:3306/zhangjp?characterEncoding=UTF-8
+    username: zhangjp
+    password: zhangjp
+
+  redis:
+    host: 120.79.179.112
+    database: 1
+    password: test
+    port: 6379
+    luaScript: 'if redis.call("get",KEYS[1]) == ARGV[1] then return redis.call("del",KEYS[1]) else return 0  end'
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 8
+
+

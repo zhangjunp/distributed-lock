@@ -54,7 +54,7 @@
        * 如果设置太长的话，一旦某个持有锁的客户端释放锁失败，那么就会导致所有其它客户端都无法获取锁，从而长时间内无法正常工作。
 
 ### 四、 Redis分布式锁的最佳实践
-> Redis的作者antirez给出了一个更好的实现，称为Redlock;参考地址：https://redis.io/topics/distlock
+> Redis的作者antirez给出了一个更好的实现，称为Redlock;参考地址：https://redis.io/topics/distlock <br/>
 > 基于java的实现：https://github.com/redisson/redisson
 
 ### 五、 ZK分布式锁

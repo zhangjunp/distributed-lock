@@ -80,7 +80,7 @@ public class RedisLock {
             // 5.使用setNX方法设置锁值 ()
 //            connection.set(lockName.getBytes(),identifierValue.getBytes(), Expiration.seconds(expireLock),SET_IF_PRESENT);
 //            修改之后的命令，将setNX和expire命令合成一组原命令，排除在设置setNX之后和expire之间突然断掉，造成死锁问题
-//            此命令仅仅支持在redis 2.8.0版本以上
+//            此命令仅仅支持在redis  版本以上
             Boolean nx = redisTemplate.opsForValue().setIfAbsent(lockName, identifierValue, expireLock, TimeUnit.SECONDS);
             if (null != nx && nx) {
                 // 6.判断返回结果如果为true,则可以成功获取锁,并且设置锁的超时时间
@@ -112,7 +112,7 @@ public class RedisLock {
         RedisScript delIfValueEqual = RedisScript.of(redisConfig.getLuaScript(), Long.class);
         List<String> keys = new ArrayList<>();
         keys.add(lockName);
-        Long result = (Long) redisTemplate.execute(delIfValueEqual, keys, identifier);
+        Long result = (Long) redisTemplate.execute(delIfValueEqual, keys, new Object[]{identifier});
         if (null != result && 1 == result) {
             log.info("lockName:{},唯一标志：{}; 解锁成功......",lockName,identifier);
             flag=true;

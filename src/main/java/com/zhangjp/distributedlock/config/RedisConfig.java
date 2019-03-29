@@ -2,7 +2,6 @@ package com.zhangjp.distributedlock.config;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.I0Itec.zkclient.ZkClient;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
@@ -60,8 +59,8 @@ public class RedisConfig {
         return redisTemplate;
     }
 
-    @Bean
+   /* @Bean
     public ZkClient zkClient(){
         return new ZkClient("127.0.0.1:2181");
-    }
+    }*/
 }

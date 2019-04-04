@@ -62,5 +62,8 @@
 1. 借助Zookeerper的临时节点特性
 2. 借助Zookeerper的事件通知特性
          
-    
+### 六、 参考文章
+  >简书文章参考：http://zhangtielei.com/posts/blog-redlock-reasoning.html <br/>
+  >Redis 官方参考：https://redis.io/topics/distlock <br/>
+	 Zookeeper 官方参考：http://zookeeper.apache.org/doc/r3.4.9/recipes.html#sc_recipes_Locks <br/>
 
